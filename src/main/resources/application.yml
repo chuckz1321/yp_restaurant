@@ -1,0 +1,22 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://ypserver.mybluemix.net/eureka
+  instance:
+    hostname: localhost
+    metadataMap:
+      instanceId: yp_restaurant
+
+spring:
+  application:
+    name: yp_restaurant
+server:
+  port: 8764
+
+---
+spring:
+  profiles: cloud
+eureka:
+  instance:
+    nonSecurePort: 80
