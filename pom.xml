@@ -49,6 +49,13 @@
             <version>2.7.0</version><!-- resovle https request-->
         </dependency>
 
+        <!-- mybatis dependency -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
         <!-- db2 denpendencies-->
         <dependency>
             <groupId>com.ibm.db2.jcc</groupId>
