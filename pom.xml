@@ -48,6 +48,13 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.7.0</version><!-- resovle https request-->
         </dependency>
+
+        <!-- db2 denpendencies-->
+        <dependency>
+            <groupId>com.ibm.db2.jcc</groupId>
+            <artifactId>db2jcc4</artifactId>
+            <version>10.1</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -76,6 +83,12 @@
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
             <url>https://repo.spring.io/milestone</url>
+        </repository>
+
+        <repository>
+            <id>db2</id>
+            <name>jcc</name>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
         </repository>
     </repositories>
 

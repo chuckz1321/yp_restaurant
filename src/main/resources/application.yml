@@ -11,6 +11,12 @@ eureka:
 spring:
   application:
     name: yp_restaurant
+  datasource:
+    url: jdbc:db2://dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB
+    username: dpw95833
+    password: 8w-mttxq3js7rd3v
+    driver-class-name: com.ibm.db2.jcc.DB2Driver
+
 server:
   port: 8764
 
