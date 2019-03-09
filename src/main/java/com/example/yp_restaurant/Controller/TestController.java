@@ -1,8 +1,9 @@
 package com.example.yp_restaurant.Controller;
 
 import com.example.yp_restaurant.Entity.ResponseMessage;
-import com.example.yp_restaurant.Entity.TUser;
-import com.example.yp_restaurant.service.IUserService;
+import com.example.yp_restaurant.Entity.Restaurant;
+import java.util.*;
+import com.example.yp_restaurant.Dao.RestaurantDao;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/test")
