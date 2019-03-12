@@ -18,21 +18,15 @@ public class RestaurantController {
     @Autowired
     RestaurantSvcImpl svc;
 
-    /*public abstract List<Restaurant> getRestaurantListByState(String state);
-    public abstract List<Restaurant> getRestaurantListByAddress(String address);
-    public abstract List<Restaurant> getRestaurantListByCity(String city);
-    public abstract List<Restaurant> getRestaurantListByName(String name);
-    public abstract List<Restaurant> getRestaurantListByType(String type);*/
-
     @RequestMapping(value="/test",method=RequestMethod.GET)
     @ResponseBody
     public ResponseMessage<List<Restaurant>> test(@RequestParam("country") String country){
-        svc.getRestaurantListByState("PIONEER HISTORICAL SOCIETY INC");
-        svc.getRestaurantListByAddress("FARMINGTON");
-        svc.getRestaurantListByCity("PO BOX 132");
-        svc.getRestaurantListByName("PO BOX 132");
+        svc.getRestaurantListByState("LA");
+        svc.getRestaurantListByAddress("800 N Canal Blvd");
+        svc.getRestaurantListByCity("Thibodaux");
+        svc.getRestaurantListByName("SONIC Drive In");
         ResponseMessage message = new ResponseMessage();
-        message.setResponseBody(svc.getRestaurantListByType("IA"));
+        message.setResponseBody(svc.getRestaurantListByType("American Restaurant and Fast Food Restaurant"));
         message.setHttpCode("200");
         return message;
     }
