@@ -14,4 +14,5 @@ public interface RestaurantDao {
     public abstract List<Restaurant> getRestaurantListByCity(@Param("city") String city);
     public abstract List<Restaurant> getRestaurantListByName(@Param("name") String name);
     public abstract List<Restaurant> getRestaurantListByType(@Param("type") String type);
+    public abstract List<Restaurant> getRestaurantListByMultipleConditions(@Param("state") String state, @Param("address") String address, @Param("city") String city, @Param("name") String name, @Param("type") String type);
 }

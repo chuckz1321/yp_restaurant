@@ -33,4 +33,8 @@ public class RestaurantSvcImpl implements RestaurantSvc{
         List<Restaurant> restaurants = restaurantDao.getRestaurantListByType(type);
         return restaurants;
     }
+    public List<Restaurant> getRestaurantListByMultipleConditions(String state, String address, String city, String name, String type){
+        List<Restaurant> restaurants = restaurantDao.getRestaurantListByMultipleConditions(state, address, city, name, type);
+        return restaurants;
+    }
 }
