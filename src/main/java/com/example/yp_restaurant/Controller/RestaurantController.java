@@ -40,27 +40,27 @@ public class RestaurantController {
         if(subqueries.length == 1){
             String[] queryParts = subqueries[0].split("=");
             switch(queryParts[0]){
-                case "restaurantState":
+                case "state":
                     if( !queryParts[1].equals("") ) {
                         restaurant = svc.getRestaurantListByState(queryParts[1]);
                     }
                     break;
-                case "restaurantAddress":
+                case "address":
                     if( !queryParts[1].equals("") ) {
                         restaurant = svc.getRestaurantListByAddress(queryParts[1]);
                     }
                     break;
-                case "restaurantName":
+                case "name":
                     if (!queryParts[1].equals("")){
                         restaurant = svc.getRestaurantListByName(queryParts[1]);
                     }
                     break;
-                case "restaurantType":
+                case "type":
                     if (!queryParts[1].equals("")){
                         restaurant = svc.getRestaurantListByType(queryParts[1]);
                     }
                     break;
-                case "restaurantCity":
+                case "city":
                     if (!queryParts[1].equals("")){
                         restaurant = svc.getRestaurantListByCity(queryParts[1]);
                     }
