@@ -2,21 +2,12 @@ package com.example.yp_restaurant.Entity;
 
 public class Restaurant {
 
-    private Integer id;
     private String address;
     private String type;
     private String city;
     private String name;
     private String postalCode;
     private String state;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getAddress() {
         return address;

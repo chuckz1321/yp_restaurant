@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.annotations.ApiImplicitParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class RestaurantController {
         return message;
     }
 
+    @CrossOrigin(origins={"*"})
     @ApiOperation(value="search", notes="search skiresort information ")
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public List<Restaurant> processQuery(@RequestBody RequestQuery inputQuery){
