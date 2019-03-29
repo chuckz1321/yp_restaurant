@@ -35,6 +35,7 @@ public class RestaurantController {
     @CrossOrigin(origins={"*"})
     @ApiOperation(value="search", notes="search skiresort information ")
     @RequestMapping(value = "/search", method = RequestMethod.POST)
+    @ResponseBody
     public List<Restaurant> processQuery(@RequestBody RequestQuery inputQuery){
         String query = inputQuery.getQuery();
         List<Restaurant> restaurant = new ArrayList<Restaurant>();
