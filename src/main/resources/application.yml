@@ -1,10 +1,11 @@
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://ypserver.mybluemix.net/eureka
   instance:
     hostname: localhost
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
     metadataMap:
       instanceId: yp_restaurant
 
