@@ -48,32 +48,34 @@ public class RestaurantController {
         String type = "";
         for(String subquery:subqueries){
             String[] queryParts = subquery.split("=");
-            switch(queryParts[0]){
-                case "state":
-                    if( !queryParts[1].equals("") ) {
-                        state = queryParts[1];
-                    }
-                    break;
-                case "address":
-                    if( !queryParts[1].equals("") ) {
-                        address = queryParts[1];
-                    }
-                    break;
-                case "city":
-                    if( !queryParts[1].equals("") ){
-                        city = queryParts[1];
-                    }
-                    break;
-                case "name":
-                    if( !queryParts[1].equals("") ){
-                        name = queryParts[1];
-                    }
-                    break;
-                case "type":
-                    if( !queryParts[1].equals("") ){
-                        type = queryParts[1];
-                    }
-                    break;
+            if( queryParts.length > 1 ) {
+                switch (queryParts[0]) {
+                    case "state":
+                        if (!queryParts[1].equals("")) {
+                            state = queryParts[1];
+                        }
+                        break;
+                    case "address":
+                        if (!queryParts[1].equals("")) {
+                            address = queryParts[1];
+                        }
+                        break;
+                    case "city":
+                        if (!queryParts[1].equals("")) {
+                            city = queryParts[1];
+                        }
+                        break;
+                    case "name":
+                        if (!queryParts[1].equals("")) {
+                            name = queryParts[1];
+                        }
+                        break;
+                    case "type":
+                        if (!queryParts[1].equals("")) {
+                            type = queryParts[1];
+                        }
+                        break;
+                }
             }
             System.out.println("state:"+state+" address:"+address+" name:"+name+" city:"+city+" type:"+type);
             restaurant = svc.getRestaurantListByMultipleConditions(state, address, city, name, type);
