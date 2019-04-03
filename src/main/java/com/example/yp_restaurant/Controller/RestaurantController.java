@@ -40,74 +40,44 @@ public class RestaurantController {
         String query = inputQuery.getQuery();
         List<Restaurant> restaurant = new ArrayList<Restaurant>();
         String[] subqueries = query.split("&");
-        if(subqueries.length == 1){
-            String[] queryParts = subqueries[0].split("=");
+        System.out.println("query length:"+subqueries.length);
+        String state = "";
+        String address = "";
+        String city = "";
+        String name = "";
+        String type = "";
+        for(String subquery:subqueries){
+            String[] queryParts = subquery.split("=");
             switch(queryParts[0]){
                 case "state":
                     if( !queryParts[1].equals("") ) {
-                        restaurant = svc.getRestaurantListByState(queryParts[1]);
+                        state = queryParts[1];
                     }
                     break;
                 case "address":
                     if( !queryParts[1].equals("") ) {
-                        restaurant = svc.getRestaurantListByAddress(queryParts[1]);
-                    }
-                    break;
-                case "name":
-                    if (!queryParts[1].equals("")){
-                        restaurant = svc.getRestaurantListByName(queryParts[1]);
-                    }
-                    break;
-                case "type":
-                    if (!queryParts[1].equals("")){
-                        restaurant = svc.getRestaurantListByType(queryParts[1]);
+                        address = queryParts[1];
                     }
                     break;
                 case "city":
-                    if (!queryParts[1].equals("")){
-                        restaurant = svc.getRestaurantListByCity(queryParts[1]);
+                    if( !queryParts[1].equals("") ){
+                        city = queryParts[1];
+                    }
+                    break;
+                case "name":
+                    if( !queryParts[1].equals("") ){
+                        name = queryParts[1];
+                    }
+                    break;
+                case "type":
+                    if( !queryParts[1].equals("") ){
+                        type = queryParts[1];
                     }
                     break;
             }
-        }
-        else {
-            String state = "";
-            String address = "";
-            String city = "";
-            String name = "";
-            String type = "";
-            for(String subquery:subqueries){
-                String[] queryParts = subquery.split("=");
-                switch(queryParts[0]){
-                    case "state":
-                        if( !queryParts[1].equals("") ) {
-                            state = queryParts[1];
-                        }
-                        break;
-                    case "address":
-                        if( !queryParts[1].equals("") ) {
-                            address = queryParts[1];
-                        }
-                        break;
-                    case "city":
-                        if( !queryParts[1].equals("") ){
-                            city = queryParts[1];
-                        }
-                        break;
-                    case "name":
-                        if( !queryParts[1].equals("") ){
-                            name = queryParts[1];
-                        }
-                        break;
-                    case "type":
-                        if( !queryParts[1].equals("") ){
-                            type = queryParts[1];
-                        }
-                        break;
-
-                }
-            }
+            System.out.println("state:"+state+" address:"+address+" name:"+name+" city:"+city+" type:"+type);
             restaurant = svc.getRestaurantListByMultipleConditions(state, address, city, name, type);
+            System.out.println("result size:"+restaurant.size());
 
         }
         ResponseMessage<List<Restaurant>> message = new ResponseMessage<List<Restaurant>>();
